@@ -1,0 +1,25 @@
+name: tests
+
+# Runs on every push/PR (manual edits) and on the commit release.yml pushes
+# here after a Kraft release, so a bad bump fails loudly instead of silently
+# leaving `brew install kraft` broken.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      # `brew install`/`audit` refuse a bare formula path ("must be in a
+      # tap"), so tap this checkout under its real name first.
+      - run: brew tap itsomidkarami/kraft "$PWD"
+
+      - run: brew install --build-from-source --verbose itsomidkarami/kraft/kraft
+
+      - run: brew test --verbose itsomidkarami/kraft/kraft
+
+      - run: brew audit --strict itsomidkarami/kraft/kraft
