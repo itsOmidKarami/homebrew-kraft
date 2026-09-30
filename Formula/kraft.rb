@@ -7,7 +7,11 @@ class Kraft < Formula
   sha256 "a4ff316cf9e5ba2a44758b3eb7fc428c2d2c79b1a350fabb800cab7767b9d95e"
   license "Apache-2.0"
 
-  depends_on "python@3.14"
+  # The wheel is pure Python and runs on 3.12+, but a formula can only
+  # depend on one interpreter. Pin the newest one CI tests as its primary
+  # leg; to move, change this one line.
+  PYTHON_VERSION = "3.14".freeze
+  depends_on "python@#{PYTHON_VERSION}"
 
   # kraft-sdlc's deps include Rust-backed wheels (pydantic-core,
   # rpds-py) and platform wheels (sqlite-vec) with no buildable sdist path a
@@ -23,8 +27,8 @@ class Kraft < Formula
     wheel = buildpath/"kraft_sdlc-#{version}-py3-none-any.whl"
     cp cached_download, wheel
 
-    virtualenv_create(libexec, "python3.14")
-    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python",
+    virtualenv_create(libexec, "python#{PYTHON_VERSION}")
+    system "python#{PYTHON_VERSION}", "-m", "pip", "--python=#{libexec}/bin/python",
            "install", "--no-cache-dir", wheel
     bin.install_symlink libexec/"bin/kraft"
   end
