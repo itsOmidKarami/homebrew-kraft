@@ -3,8 +3,8 @@ class Kraft < Formula
 
   desc "Local orchestrator for semi-autonomous agentic SDLC"
   homepage "https://github.com/itsOmidKarami/kraft"
-  url "https://github.com/itsOmidKarami/kraft/releases/download/v1.2.1/kraft_sdlc-1.2.1-py3-none-any.whl"
-  sha256 "3e2ddb4a90a3fc13395a9a84f2e1f7c8a965dec1d50fa5448759919ec1b34998"
+  url "https://github.com/itsOmidKarami/kraft/releases/download/v1.2.2/kraft_sdlc-1.2.2-py3-none-any.whl"
+  sha256 "a4ff316cf9e5ba2a44758b3eb7fc428c2d2c79b1a350fabb800cab7767b9d95e"
   license "Apache-2.0"
 
   depends_on "python@3.14"
