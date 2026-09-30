@@ -1,15 +1,15 @@
 class Kraft < Formula
   include Language::Python::Virtualenv
 
-  desc "Local orchestrator for semi-autonomous agentic SDLC"
-  homepage "https://github.com/itsOmidKarami/kraft"
+  desc "Local orchestrator that takes your coding agent from spec to pull request"
+  homepage "https://itsomidkarami.github.io/kraft/"
   url "https://github.com/itsOmidKarami/kraft/releases/download/v1.2.2/kraft_sdlc-1.2.2-py3-none-any.whl"
   sha256 "a4ff316cf9e5ba2a44758b3eb7fc428c2d2c79b1a350fabb800cab7767b9d95e"
   license "Apache-2.0"
 
   depends_on "python@3.14"
 
-  # ponytail: kraft-sdlc's deps include Rust-backed wheels (pydantic-core,
+  # kraft-sdlc's deps include Rust-backed wheels (pydantic-core,
   # rpds-py) and platform wheels (sqlite-vec) with no buildable sdist path a
   # brew resource block can pin without a Rust toolchain. Homebrew's
   # Language::Python::Virtualenv forces `--no-binary=:all: --no-deps`, which
