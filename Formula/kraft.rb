@@ -3,8 +3,8 @@ class Kraft < Formula
 
   desc "Local orchestrator that takes your coding agent from spec to pull request"
   homepage "https://itsomidkarami.github.io/kraft/"
-  url "https://github.com/itsOmidKarami/kraft/releases/download/v1.2.2/kraft_sdlc-1.2.2-py3-none-any.whl"
-  sha256 "a4ff316cf9e5ba2a44758b3eb7fc428c2d2c79b1a350fabb800cab7767b9d95e"
+  url "https://github.com/itsOmidKarami/kraft/releases/download/v1.3.0/kraft_sdlc-1.3.0-py3-none-any.whl"
+  sha256 "8dcc87463187ca8945a80b7766ffd0f56b6c986bfc5be4e04045774610960a87"
   license "Apache-2.0"
 
   # The wheel is pure Python and runs on 3.12+, but a formula can only
