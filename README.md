@@ -33,6 +33,14 @@ Rust-backed wheels (`pydantic-core`, `rpds-py`) and platform-only wheels
 See the comment in `Formula/kraft.rb` for the full reasoning and the upgrade
 path if reproducible/offline builds become a requirement later.
 
+## Python version
+
+Kraft itself supports Python 3.12, 3.13 and 3.14, but a Homebrew formula
+depends on a single interpreter, so this tap pins `python@3.14` (the version
+Kraft's CI treats as primary). The venv is isolated under `libexec`, so it
+doesn't interfere with any other Python you have. To run Kraft on 3.12 or
+3.13, install it with `pip`/`uv tool` instead of the tap.
+
 ## License
 
 Apache-2.0, matching the [Kraft](https://github.com/itsOmidKarami/kraft) project.
