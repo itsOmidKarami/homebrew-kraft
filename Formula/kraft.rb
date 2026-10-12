@@ -2,7 +2,7 @@ class Kraft < Formula
   include Language::Python::Virtualenv
 
   desc "Local orchestrator that takes your coding agent from spec to pull request"
-  homepage "https://itsomidkarami.github.io/kraft/"
+  homepage "https://kraft-sdlc.dev/"
   url "https://github.com/itsOmidKarami/kraft/releases/download/v2.0.0/kraft_sdlc-2.0.0-py3-none-any.whl"
   sha256 "3b3cb02bd10a42f0454167a191b1a321fc74d8860231693a32575000f619d09d"
   license "Apache-2.0"
